@@ -17,6 +17,10 @@ header {
   justify-content: space-between;
 
   padding: 48px;
+
+  position: fixed;
+  width: 100%;
+  background-color: #09090a;
 }
 
 button {
@@ -39,10 +43,19 @@ button {
   gap: 12px;
 }
 
-form {
+/* width: 0px - 570px */
+@media (max-width: 570px) {
+  .registerText {
+    display: none;
+  }
+}
+
+.form-habits {
   display: flex;
 
-  padding: 0 48px;
+  padding: 182px 48px 48px 48px;
+
+  width: fit-content;
 }
 
 form .habits {
