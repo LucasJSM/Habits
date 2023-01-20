@@ -1,13 +1,28 @@
-const form = document.querySelector(".form-habits")
-const nlwSetup = new NLWSetup(form)
+const formHabits = document.querySelector(".form-habits")
+const nlwSetup = new NLWSetup(formHabits)
 
-const data = {
-  run: ["01-01", "01-02", "01-03", "01-06"],
-  water: ["01-01", "01-02", "01-03", "01-04"],
-  food: ["01-01", "01-02"],
-  gym: ["01-01", "01-04"],
-  sleep: ["01-01", "01-02", "01-03", "01-04", "01-05", "01-06"],
+const btnRegisterDay = document.querySelector(".btn-registerDay")
+
+function add() {
+  const day = new Date().toLocaleDateString("pt-br").slice(0, 5)
+  const dayExists = nlwSetup.dayExists(day)
+
+  if (dayExists) {
+    alert(`${day} - Dia existente`)
+  }
+
+  nlwSetup.addDay(day)
 }
+
+function saveData() {
+  let data = JSON.stringify(nlwSetup.data)
+  localStorage.setItem("@habits", data)
+}
+
+btnRegisterDay.addEventListener("click", add)
+formHabits.addEventListener("change", saveData)
+
+const data = JSON.parse(localStorage.getItem("@habits")) || {}
 
 nlwSetup.setData(data)
 nlwSetup.load()

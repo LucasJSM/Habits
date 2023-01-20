@@ -23,7 +23,7 @@ header {
   background-color: #09090a;
 }
 
-button {
+.btn-registerDay {
   padding: 16px 24px;
 
   border: 1px solid #8b5cf6;
@@ -37,6 +37,8 @@ button {
   line-height: 125%;
   color: #fff;
 
+  cursor: pointer;
+
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -45,7 +47,7 @@ button {
 
 /* width: 0px - 570px */
 @media (max-width: 570px) {
-  .registerText {
+  .btn-registerDay div {
     display: none;
   }
 }
@@ -58,7 +60,7 @@ button {
   width: fit-content;
 }
 
-form .habits {
+.form-habits .habits {
   margin-top: 60px;
 
   display: flex;
@@ -67,7 +69,7 @@ form .habits {
   gap: 24px;
 }
 
-form .habits .habit {
+.form-habits .habits .habit {
   width: 64px;
   height: 64px;
 
@@ -78,14 +80,14 @@ form .habits .habit {
   justify-content: center;
 }
 
-form .days {
+.form-habits .days {
   display: flex;
   gap: 48px;
 
   margin-left: 32px;
 }
 
-form .days .day {
+.form-habits .days .day {
   display: flex;
   flex-direction: column;
   gap: 24px;
