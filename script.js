@@ -9,8 +9,10 @@ function add() {
 
   if (dayExists) {
     alert(`${day} - Dia existente`)
+    return
   }
 
+  alert(`Dia adicionado com sucesso`)
   nlwSetup.addDay(day)
 }
 
