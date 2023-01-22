@@ -3,16 +3,30 @@ const nlwSetup = new NLWSetup(formHabits)
 
 const btnRegisterDay = document.querySelector(".btn-registerDay")
 
+function createTempModal(text) {
+  const div = document.createElement("div")
+  div.innerText = text
+  div.classList.add("tempModal")
+
+  formHabits.appendChild(div)
+
+  setTimeout(() => {
+    div.innerText = ""
+    div.classList.remove("tempModal")
+    formHabits.removeChild(div)
+  }, 5000)
+}
+
 function add() {
   const day = new Date().toLocaleDateString("pt-br").slice(0, 5)
   const dayExists = nlwSetup.dayExists(day)
 
   if (dayExists) {
-    alert(`${day} - Dia existente`)
+    createTempModal("Dia existente")
     return
   }
 
-  alert(`Dia adicionado com sucesso`)
+  createTempModal("Adicionado com sucesso!")
   nlwSetup.addDay(day)
 }
 
