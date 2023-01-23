@@ -134,16 +134,18 @@ input[type="checkbox"]:checked {
   border-top: 5px solid var(--border-color);
 
   font-family: "Inter", sans-serif;
-  font-weight: 700;
-  text-align: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 125%;
+  color: #fff;
 
   width: fit-content;
   height: fit-content;
 
-  margin: 16px;
-  padding: 16px;
+  margin: 16px 0px;
+  padding: 16px 24px;
 
   position: fixed;
-  bottom: 10px;
-  right: 10px;
+  bottom: 16px;
+  right: 48px;
 }

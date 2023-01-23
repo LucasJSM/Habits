@@ -22,7 +22,7 @@ function add() {
   const dayExists = nlwSetup.dayExists(day)
 
   if (dayExists) {
-    createTempModal("Dia existente")
+    createTempModal("Dia existente!")
     return
   }
 
